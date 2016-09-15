@@ -2,10 +2,10 @@
 
 ## Dependencies
 
-docker
-docker-compose
-docker-machine
-git-secret
+- docker
+- docker-compose
+- docker-machine
+- git-secret
 
 ## Steps
 
