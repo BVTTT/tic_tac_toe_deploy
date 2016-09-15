@@ -1,0 +1,4 @@
+env/api.env
+env/ui.env
+env/create_machine.sh
+*.sw?

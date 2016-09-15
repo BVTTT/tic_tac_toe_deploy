@@ -1,0 +1,29 @@
+version: "2"
+services:
+  reverse_proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  ui:
+    image: gtaveras/tic_tac_toe_ui
+    env_file:
+      - ./env/ui.env
+
+  api:
+    image: gtaveras/tic_tac_toe_api
+    links:
+      - db
+    env_file:
+      - ./env/api.env
+
+  db:
+    image: mongo
+    volumes:
+      - db_data:/data/db
+
+volumes:
+  db_data:
+    driver: local

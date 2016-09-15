@@ -1,0 +1,4 @@
+#! /usr/bin/env sh
+
+source ./env/create_machine.sh
+docker-machine create --driver amazonec2 tictactoe
